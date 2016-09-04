@@ -5,7 +5,7 @@ ini_set("error_log", __DIR__."/error_log");
 require 'farsiGD.php';
 $gd = new FarsiGD();
 ob_start();
-define('API_KEY','XXX:XXX');// your API KEY here ...
+define('API_KEY','267899740:AAHu0DEe20MR-Ot0hrr-D113N6jM_SgCbzA');// your API KEY here ...
 $update = json_decode(file_get_contents('php://input'));
 function makeHTTPRequest($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
@@ -26,15 +26,11 @@ if(isset($update->message)){
     if($text == "/start" || $text == '/help'){
         makeHTTPRequest('sendMessage',[
             'chat_id'=>$update->message->chat->id,
-            'text'=>'<b>Welcome to TEXT TO STICKER bot</b>
+            'text'=>'<code>Welcome to TEXT TO STICKER bot</code>
 
-▪️This robot convert your messages into a sticker
+▪️This robot convert your messages into a sticker 
 
-▪️be careful with your message to avoid overflow.
-
-▪️now send me a <b>message</b> and i will convert it :)
-
-▪️also you can <a href="https://telegram.me/pp2007ws">Contact Me !</a>',
+▪ <a href="https://telegram.me/NobLest">Developer</a>',
             'parse_mode'=>'HTML',
             'disable_web_page_preview'=>true
         ]);
